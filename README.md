@@ -1,4 +1,4 @@
-# co2-sensors
+# CO-2 Sensor Project
 
 Spring Boot Application
 
