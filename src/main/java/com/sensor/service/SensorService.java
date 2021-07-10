@@ -52,6 +52,7 @@ public class SensorService {
                 .sensor(sensorRecordDAO.getSensorDAO().getId())
                 .city(sensorRecordDAO.getSensorDAO().getDistrictDAO().getCityDAO().getCityName())
                 .co2Level(sensorRecordDAO.getCo2Level())
+                .insertionDate(sensorRecordDAO.getInsertionTime())
                 .build();
     }
 }

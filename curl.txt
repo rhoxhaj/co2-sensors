@@ -1,0 +1,57 @@
+1. Get sensor readings per city
+
+curl --request GET \
+  --url http://localhost:8080/sensor/city/2 \
+  --header 'Authorization: Basic d2llbjphZG1pbg==' \
+  --cookie JSESSIONID=6CCC2B778EE4270E0E050B5ACF2C7305
+
+in Insomnia/Postman, authorization can be done using the users provided in data.sql
+
+Response of the example:
+{
+  "Penzing": [
+    {
+      "sensor": 4,
+      "co2Level": 12.0,
+      "insertionDate": "2019-09-17T18:47:52.69",
+      "district": "Penzing",
+      "city": "Wien"
+    },
+    {
+      "sensor": 4,
+      "co2Level": 1.0,
+      "insertionDate": "2016-09-17T18:47:52.69",
+      "district": "Penzing",
+      "city": "Wien"
+    },
+    {
+      "sensor": 5,
+      "co2Level": 16.0,
+      "insertionDate": "2019-09-17T18:47:52.69",
+      "district": "Penzing",
+      "city": "Wien"
+    }
+  ],
+  "Waehring": [
+    {
+      "sensor": 2,
+      "co2Level": 25.0,
+      "insertionDate": "2021-07-10T13:00:40.444357",
+      "district": "Waehring",
+      "city": "Wien"
+    }
+  ]
+}
+
+
+2. insert sensor readings
+
+curl --request PUT \
+  --url http://localhost:8080/sensor \
+  --header 'Authorization: Basic d2llbjphZG1pbg==' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=45F1CC728DCF61E8352A434944811FE9 \
+  --data '{
+	"sensorId":2,
+	"co2Level":25
+}'
